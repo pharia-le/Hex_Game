@@ -34,6 +34,13 @@ public:
 
     void print_board()
     {
+		cout << "    ";
+		char alphabet[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K' };
+		for (short alpha = 0; alpha < size_; alpha++)
+		{
+			cout << alphabet[alpha] << "   ";
+		}
+		cout << endl;
 		for (short x = 0; x < size_; x++)
 		{
 
