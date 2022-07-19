@@ -6,8 +6,18 @@
 // 17 July 2022
 
 #include <iostream>
+#include "Board.h"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    short size = 0;
+
+    cout << "Hello Player!\n";
+    cout << "Welcome to the Game of Hex!" << endl;
+    cout << "What size board say you?!" << endl;
+    cin >> size;
+    cout << "Beginning game of size " << size << endl;
+    Board hexBoard = Board(size);
+    hexBoard.print_board();
 }
