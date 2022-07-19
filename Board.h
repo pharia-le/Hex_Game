@@ -45,13 +45,12 @@ public:
 		{
 
 			short indent = 0;
-			while (indent < 2+(2 * x))
+			while (indent < 1+(2 * x))
 			{
 				cout << " ";
 				indent++;
 			}
-			cout << x + 1 << "  ";
-
+			printf("%2d  ", x+1);
 
 			for (short y = 0; y < size_; y++)
 			{
