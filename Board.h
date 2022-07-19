@@ -7,8 +7,8 @@ using namespace std;
 class Board
 {
 public:
-	short size_;
-    short**position_matrix;
+    short size_;
+    short** position_matrix;
 
     Board(short size) {
         size_ = size;
@@ -34,64 +34,49 @@ public:
 
     void print_board()
     {
-        cout << "Current Hex Board" << endl;
-		for (short i = 0; i < size_; i++) {
+		for (short x = 0; x < size_; x++)
+		{
+
 			short indent = 0;
-			while (indent < i)
+			while (indent < 2+(2 * x))
 			{
 				cout << " ";
 				indent++;
 			}
+			cout << x + 1 << "  ";
 
-			short j = 0;
-			while  (j < size_) {
-				cout << " _ ";
-				j++;
+
+			for (short y = 0; y < size_; y++)
+			{
+				if (y != 0) cout << " - ";
+				if (position_matrix[x][y] == 0) {
+					cout << ".";
+				}
 			}
 			cout << endl;
 
 			indent = 0;
-			while (indent < i)
+			while (indent < (7 + (2 * x) - 1))
 			{
 				cout << " ";
 				indent++;
 			}
-			short k = 0;
-			while (k < size_) {
-				cout << "/ \\";
-					k++;
-			}
-			cout << endl;
+			if (x + 1 != size_) {
+				cout << "\\";
+				short filler = 0;
+				while (filler < size_ - 1)
+				{
+					cout << " / \\";
+					filler++;
 
-			indent = 0;
-			while (indent < i)
-			{
-				cout << " ";
-				indent++;
+				}
+				cout << endl;
 			}
-			for (short m = 0; m < size_; m++)
-			{
-				cout << "|" << position_matrix[i][m] << "|";
-			}
-			cout << endl;
-
-			indent = 0;
-			while ( indent < i)
-			{
-				cout << " ";
-				indent++;
-			}
-			short n = 0;
-			while ( n < size_) {
-				cout << "\\_/";
-				n++;
-			}
-			cout << endl;
-
 
 		}
-
     }
+
+    
 
 };
 
