@@ -82,8 +82,6 @@ public:
 		}
     }
 
-    
-
 };
 
 #endif // BOARD_H_
